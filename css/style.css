@@ -1,0 +1,135 @@
+:root {
+    --font:'Outfit', sans-serif;
+    /* Primary */
+    --softBlue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    /* Neutral */
+    --backG: hsl(217, 54%, 11%);
+    --cardBG: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --white:#fff;
+    --black:#000;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    background-color: var(--backG);
+    font-size: 1.8rem;
+    line-height: 4rem;/* Interlineado */
+    font-family: var(--font);
+}
+/* Global */
+.container {
+    width: min(90%, 120rem);
+    margin: 15rem auto;
+}
+h1 {
+    font-size: 8.8rem;
+    font-weight: normal;
+}
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+h4 {
+    font-size: 2.8rem;
+}
+img {
+    max-width: 100%;
+}
+/* Utilidades*/
+.not-margin {
+    margin: 0;
+}
+.not-padding {
+    padding: 0;
+}
+.center-text {
+    text-align: center;
+}
+/* Body */
+.card {
+    display: grid;
+    background-color: var(--cardBG);
+    border-radius: 2rem;
+    grid-template-columns: 1fr;
+    padding: 0 3rem;
+}
+@media (min-width: 768px) {
+    .card {
+        width:50rem;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.card__images {
+    justify-content: center;
+    padding-top: 3rem;
+}
+.card__images img {
+    border-radius: 2rem;
+    cursor: pointer;
+    z-index: 1;
+}
+.card__images img:hover {
+    z-index: -1;
+    background: rgb(0,230,255);
+    background: linear-gradient(270deg, rgba(0,230,255,0.5) 0%, rgba(0,221,255,0.5) 100%);
+}
+.card__contain h4 {
+    color: var(--white);
+    font-weight: 600;
+    margin: 2rem 0;
+    cursor: pointer;
+}
+.card__contain h4:hover {
+    color: var(--cyan);
+}
+.card__contain p {
+    color: var(--softBlue);
+    font-size: 2rem;
+}
+.card__text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--line);
+}
+.card__text-price .price {
+    color: var(--cyan);
+    font-weight: 600;
+}
+.card__text-price, 
+.card__text-time {
+    display: flex;
+    align-items: center;
+}
+.card__text-time {
+    justify-content: right;
+}
+.creation {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+}
+.creation img {
+    width: 10%;
+    height: 10%;
+    border: 1px solid var(--white);
+    border-radius: 5rem;
+}
+.creation span {
+    color: var(--white);
+    cursor: pointer;
+}
+.creation span:hover {
+    color: var(--cyan);
+}
